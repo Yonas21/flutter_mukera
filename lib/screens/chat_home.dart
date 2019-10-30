@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       drawer: ProfileDrawer(),
       appBar: AppBar(
-        title: Text('Welcome to Flutter'),
+        title: Text('Starting New'),
       ),
       body: 
       isLoading ? Center(child: CircularProgressIndicator())
@@ -60,15 +60,20 @@ class _HomePageState extends State<HomePage> {
           return ListTile(
             leading: CircleAvatar(
               radius: 25,
-              backgroundImage: AssetImage('assets/images/1.jpg'),
+              backgroundImage: AssetImage('assets/images/fiker.jpg'),
             ),
             title: Text(
               message.subject
               ),
             isThreeLine: true,
-            trailing: Icon(
-              Icons.done
+            trailing: Chip(
+              label: Text('1',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                color: Colors.red,
+                ),
               ),
+            ),
             subtitle: Text(
               message.body,
               maxLines: 2, 
